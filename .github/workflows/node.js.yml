@@ -13,7 +13,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [10.x, 12.x, 14.x, 15.x]
+        node-version: [12.x]
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
@@ -23,5 +23,5 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     - run: npm install -g mongodb-realm-cli@beta
-    - run: realm-cli login --api-key {{ $secrets.MONGO_DB_REALM_PUBLIC }} --private-api-key {{ $secrets.MONGO_DB_REALM_PRIVATE }} 
+    - run: realm-cli login --api-key {{ secrets.MONGO_DB_REALM_PUBLIC }} --private-api-key {{ secrets.MONGO_DB_REALM_PRIVATE }} 
     - run: realm-cli import --yes
