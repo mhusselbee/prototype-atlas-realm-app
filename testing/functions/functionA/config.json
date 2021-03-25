@@ -1,6 +1,4 @@
-[
-    {
-        "name": "functionA",
-        "private": false
-    }
-]
+{
+  "name": "functionA",
+  "private": false
+}
