@@ -1,0 +1,22 @@
+{
+    "name": "github-sync",
+    "type": "mongodb-atlas",
+    "config": {
+        "clusterName": "github-cluster",
+        "readPreference": "primary",
+        "sync": {
+            "state": "enabled",
+            "partition": {
+                "key": "_partitionKey",
+                "type": "string",
+                "required": true,
+                "permissions": {
+                    "read": true,
+                    "write": true
+                }
+            }
+        },
+        "wireProtocolEnabled": false
+    },
+    "version": 1
+}

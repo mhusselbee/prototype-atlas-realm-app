@@ -1,0 +1,13 @@
+{
+    "properties": {
+        "_id": {
+            "bsonType": "objectId"
+        },
+        "_partitionKey": {
+            "bsonType": "string"
+        }
+    },
+    "required": [
+        "_partitionKey"
+    ]
+}
