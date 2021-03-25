@@ -1,3 +1,3 @@
 exports = function () {
-  return "Hello wurld";
+  return "Hello from github!";
 };
