@@ -26,5 +26,5 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     - run: npm install -g mongodb-realm-cli@beta
-    - run: realm-cli login --api-key $MONGO_DB_REALM_PUBLIC --private-api-key $MONGO_DB_REALM_PRIVATE
+    - run: realm-cli login --api-key $MONGO_DB_REALM_PUBLIC --private-api-key $MONGO_DB_REALM_PRIVATE --yes
     - run: realm-cli import --yes
