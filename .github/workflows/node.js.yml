@@ -20,11 +20,11 @@ jobs:
     - uses: actions/checkout@v2
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v1
-      env:
-        MONGO_DB_REALM_PUBLIC: ${{ secrets.MONGO_DB_REALM_PUBLIC }} 
-        MONGO_DB_REALM_PRIVATE: ${{ secrets.MONGO_DB_REALM_PRIVATE }}
       with:
         node-version: ${{ matrix.node-version }}
     - run: npm install -g mongodb-realm-cli@beta
     - run: realm-cli login --api-key $MONGO_DB_REALM_PUBLIC --private-api-key $MONGO_DB_REALM_PRIVATE --yes
+      env:
+        MONGO_DB_REALM_PUBLIC: ${{ secrets.MONGO_DB_REALM_PUBLIC }} 
+        MONGO_DB_REALM_PRIVATE: ${{ secrets.MONGO_DB_REALM_PRIVATE }}
     - run: realm-cli import --yes
