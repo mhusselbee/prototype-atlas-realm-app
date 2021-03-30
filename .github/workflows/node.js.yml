@@ -27,4 +27,4 @@ jobs:
       env:
         MONGO_DB_REALM_PUBLIC: ${{ secrets.MONGO_DB_REALM_PUBLIC }} 
         MONGO_DB_REALM_PRIVATE: ${{ secrets.MONGO_DB_REALM_PRIVATE }}
-    - run: realm-cli import --yes
+    - run: cd testing && realm-cli import --yes
